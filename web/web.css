@@ -1,0 +1,70 @@
+*{
+    margin: 0px; padding: 0px;
+    box-sizing: border-box;
+}
+p{font-size: 25px;}
+#headBox{
+    width: 100%; height: 150px;
+    border-bottom: 2px solid gray;
+}
+.activityName{
+    width: 1000px; margin: 20px auto;
+    font-size: 50px;
+}
+
+#base{
+    width: 100%; height: 1000px;
+    display: flex;
+}
+
+.sideBar{
+    width: 200px; height: 1000px;
+    background-color: lightgray;
+}
+.sideBar .category{
+    width: 200px; height: 50px;
+    text-align: center; line-height: 50px;
+    border: 2px solid gray;
+    transition-duration: 0.5s;
+}
+.category:hover{
+    font-size: 20px;
+}
+
+.contents{
+    width: 100%; height: 1000px; padding: 100px;
+}
+.contents .contentsTitle{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#articleList{
+    width: 1000px; height: 520px; margin: 50px auto;
+    border: 2px solid gray;
+    overflow-y: scroll; overflow-x: hidden;
+}
+.articleBox{
+    width: 1000px; height: 260px;
+    border: 2px solid gray;
+}
+.articleBox .date{
+    width: 100%; height: 60px;
+    border-bottom: 2px solid gray;
+    font-size: 40px; align-self: center;
+    background-color: rgba(156, 245, 156, 0.733);
+}
+.quest{
+    width: 1000px; height: 200px;
+    display: flex;
+}
+.quest>div{
+    margin-right: 40px; height: 70px;
+    font-size: 50px;
+    align-self: center;
+}
+
+.linkBox{border: 3px solid gray; transition-duration: 0.5s;}
+.linkBox:hover{
+    background-color: lightgreen;
+}
