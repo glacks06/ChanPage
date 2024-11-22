@@ -1,9 +1,0 @@
-*{
-    margin: 0px; padding: 0px;
-    box-sizing: border-box;
-}
-
-#headBox{
-    width: 100%; height: 150px;
-    border-bottom: 2px solid gray;
-}

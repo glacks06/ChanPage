@@ -62,5 +62,24 @@ body{
 /* 본문 */
 section{
     width: 100%; height: 1000px;
-    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+section div{
+    width: 200px; height: 250px;
+    margin: 20px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, lightblue, black);
+    border: 2px solid rgba(255, 255, 255, 0.227);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+section div:hover{
+    opacity: 0.5;
+}
+section img{
+    display: block;
+    width: 150px; height: 150px;
+    margin: 10px auto;
 }
