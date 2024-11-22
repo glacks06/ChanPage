@@ -6,32 +6,32 @@ a{
     text-decoration-line: none;
     color: black;
 }
+ul{
+    list-style-type: none;
+}
+body{
+    background-color: black;
+    padding-top: 70px;
+    color: white;
+}
 
 /*head Box*/
 #headBox{
-    width: 100%; height: 150px;
+    width: 100%; height: 70px;
+    position: fixed;
+    top: 0px;
+    background-image: linear-gradient(to bottom, lightblue, black, black);
     border-bottom: 2px solid gray;
 }
-#headBox .logo{
-    width: 500px; height: 80px;
-    margin: 5px auto; padding-top: 20px;
-}
-.logo .logoText{
-    width: 200px; margin: 0px auto;
-    text-align: center; font-size: 35px;
-    box-shadow: 5px 5px 7px 2px;
-    background-color: beige;
-}
+
 #headBox .nav{
-    width: 1180px; height: 60px; margin: 0px auto;
-    /* position: relative; top: 88px; */
+    width: 1000px; height: 70px;
+    margin-left: 100px;
     display: flex;
 }
-#headBox .nav div{
-    width: 200px; height: 40px; padding: 15px;
-    margin: 0px 18px; /* nav가로 1180*/
-    text-align: center; font-size: 22px;
-    transition-duration: 0.5s;
+#headBox .nav li{
+    margin: auto 40px;
+    font-size: 20px;
 }
 .nav div:hover{
     background-color: lightgray;
@@ -39,35 +39,47 @@ a{
 
 /*본문*/
 .section{
-    width: 1000px; height: 250px;
-    margin: 20px auto; display: flex;
-    border: 3px solid gray;
-    opacity: 0.4;
-    transition-duration: 0.5s;
+    width: 1500px; height: 500px;
+    margin: 200px auto;
+    display: flex;
+    
+    /* border: 3px solid gray; */
 }
-.section:hover{
-    opacity: 1;
+.section > div{
+    width: 750px; height: 500px;
+    
+}
+.section_Img{
+    display: block;
+    margin: 20px;
+    width: 710px; height: 460px;
 }
 
-/*이미지*/
-.section .section_Img1{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article_Img1.png");
+.section_TextBox{
+    font-size: 60px;
+    text-align: center;
 }
-.section .section_Img2{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article_Img2.png");
+.section_TextBox p{
+    margin-top: 90px;
 }
-.section .section_Img3{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article-Img3.png");
+.section_TextBox small{
+    font-size: 20px; color: rgb(213, 213, 213);
 }
+.section_TextBox div{
+    width: 100px; height: 50px;
+    margin: 40px auto;
+    font-size: 20px;
+    line-height: 50px;
+    background-color: blue;
+    
+}
+.section_TextBox div:hover{
+    background-color: rgb(46, 118, 252);
+}
+
 
 /*각 파트별 제목+설명*/
-.section .introduce{width: 640px; height: 210px; margin: 20px;}
+/* .section .introduce{width: 640px; height: 210px; margin: 20px;}
 .section .introduce .introduce_title{
     width: 300px; margin: 20px auto;
     font-size: 40px;
@@ -77,84 +89,4 @@ a{
     width: 500px; margin: 20px auto;
     font-size: 20px;
     text-align: center;
-}
-*{
-    margin: 0px; padding: 0px;
-    box-sizing: border-box;
-}
-a{
-    text-decoration-line: none;
-    color: black;
-}
-
-/*head Box*/
-#headBox{
-    width: 100%; height: 150px;
-    border-bottom: 2px solid gray;
-}
-#headBox .logo{
-    width: 500px; height: 80px;
-    margin: 5px auto; padding-top: 20px;
-}
-.logo .logoText{
-    width: 200px; margin: 0px auto;
-    text-align: center; font-size: 35px;
-    box-shadow: 5px 5px 7px 2px;
-    background-color: beige;
-}
-#headBox .nav{
-    width: 1180px; height: 60px; margin: 0px auto;
-    /* position: relative; top: 88px; */
-    display: flex;
-}
-#headBox .nav div{
-    width: 200px; height: 60px; padding: 15px;
-    margin: 0px 18px; /* nav가로 1180*/
-    text-align: center; font-size: 22px;
-    transition-duration: 0.5s;
-}
-.nav div:hover{
-    background-color: lightgray;
-}
-
-/*본문*/
-.section{
-    width: 1000px; height: 250px;
-    margin: 20px auto; display: flex;
-    border: 3px solid gray;
-    opacity: 0.4;
-    transition-duration: 0.5s;
-}
-.section:hover{
-    opacity: 1;
-}
-
-/*이미지*/
-.section .section_Img1{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article_Img1.png");
-}
-.section .section_Img2{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article_Img2.png");
-}
-.section .section_Img3{
-    width: 300px; height: 210px; margin: 20px;
-    border: 3px solid gray;
-    background-image: url("index_article-Img3.png");
-}
-
-/*각 파트별 제목+설명*/
-.section .introduce{width: 640px; height: 210px; margin: 20px;}
-.section .introduce .introduce_title{
-    width: 300px; margin: 20px auto;
-    font-size: 40px;
-    text-align: center;
-}
-.section .introduce .introduce_article{
-    width: 500px; margin: 20px auto;
-    font-size: 20px;
-    text-align: center;
-}
+} */

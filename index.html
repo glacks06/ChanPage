@@ -1,47 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <title>Chan's Trace</title>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
         <div id="headBox">
-            <div class="logo">
-                <div class="logoText"><a href="./index.html">Chan</a></div>
+            <ul class="nav">
+                <li>Chan's Page</li>
+                <li>Algorithm</li>
+                <li>Projects</li>
+                <li>Web</li>
+                <li>About</li>
+            </ul>
+        </div>
+
+        <!-- 본문 -->
+        <div class="section">
+            <div>
+                <img src="index_Img_algorithm.jpg" class="section_Img">
             </div>
-            <div class="nav">
+            <div class="section_TextBox">
+                <p>Algorithm<br>
+                    <small>백준을 활용한 알고리즘 훈련</small>
+                </p>
+                
                 <div OnClick="location.href ='./algorithm/algorithmPage.html'" style="cursor:pointer;">
-                    ALGORITHM
+                    See All
                 </div>
-                <div OnClick="location.href ='./web/webPage.html'" style="cursor:pointer;">
-                    WEB
-                </div>
-                <div OnClick="location.href ='./school/schoolPage.html'" style="cursor:pointer;" style="padding-top: 0px;">
-                    PROJECT
-                </div>
-                <div>???</div>
-                <div>???</div>
             </div>
         </div>
-        <div class="section" OnClick="location.href ='./algorithm/algorithmPage.html'" style="cursor:pointer;">
-            <div class="section_Img1"></div>
-            <div class="introduce">
-                <div class="introduce_title">ALGORITHM</div>
-                <div class="introduce_article">백준 사이트를 활용한 알고리즘 훈련</div>
+        <div class="section">
+            <div class="section_TextBox">
+                <p>Projects<br>
+                    <small>다양한 프로젝트 제작 활동</small>
+                </p>
+                <div OnClick="location.href ='./algorithm/algorithmPage.html'" style="cursor:pointer;">
+                    See All
+                </div>
+            </div>
+            <div>
+                <img src="index_Img_projects.jpg" class="section_Img">
             </div>
         </div>
-        <div class="section" OnClick="location.href ='./web/webPage.html'" style="cursor:pointer;">
-            <div class="section_Img2"></div>
-            <div class="introduce">
-                <div class="introduce_title">WEB</div>
-                <div class="introduce_article">웹 페이지 제작 활동</div>
+        <div class="section">
+            <div>
+                <img src="index_Img_web.jpg" class="section_Img">
             </div>
-        </div>
-        <div class="section" OnClick="location.href ='./school/schoolPage.html'" style="cursor:pointer;">
-            <div class="section_Img3"></div>
-            <div class="introduce">
-                <div class="introduce_title">SCHOOL PROJECT</div>
-                <div class="introduce_article">학교에 제출을 목적으로 한 활동</div>
+            <div class="section_TextBox">
+                <p>Web<br>
+                    <small>웹 페이지 제작 활동</small>
+                </p>
+                <div OnClick="location.href ='./algorithm/algorithmPage.html'" style="cursor:pointer;">
+                    See All
+                </div>
             </div>
         </div>
     </body>
+</html>
