@@ -2,50 +2,43 @@
 <html>
     <head>
         <title>Chan's Trace/SCHOOL_PROJECT</title>
-        <link rel="stylesheet" type="text/css" href="school.css">
+        <link rel="stylesheet" type="text/css" href="projects.css">
     </head>
     <body>
         <div id="headBox">
-            <div class="logo">
-                <div class="logoText"><a href="../index.html">Chan</a></div>
-            </div>
-            <div class="nav">
-                <div OnClick="location.href ='../algorithm/algorithmPage.html'" style="cursor:pointer;">
-                    ALGORITHM
-                </div>
-                <div OnClick="location.href ='../web/webPage.html'" style="cursor:pointer;">
-                    WEB
-                </div>
-                <div OnClick="location.href ='../school/schoolPage.html'" style="cursor:pointer;" style="padding-top: 0px;">
-                    PROJECT
-                </div>
-                <div>???</div>
-                <div>???</div>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">Chan's Page</a></li>
+                <li><a href="../algorithm/algorithmPage.html">Algorithm</a></li>
+                <li><a href="../projects/projects.html">Projects</a></li>
+                <li><a href="../web/webPage.html">Web</a></li>
+                <li><a href="../about/aboutPage.html">About</a></li>
+            </ul>
         </div>
-        <div id="base">
-            <div class="sideBar" style="height: 2900px;">
-                <div class="category" OnClick="location.href ='./schoolPage.html'" style="cursor:pointer;">> School Project <</div>
-                <div class="category" OnClick="location.href ='./kinetic_Wall_Clock.html'" style="cursor:pointer;">Kinetic Wall Clock</div>
-                <div class="category" OnClick="location.href ='./earthS_track.html'" style="cursor:pointer;">이심률 변화 프로그램</div>
-                <div class="category" OnClick="location.href ='./physics_pulley.html'" style="cursor:pointer;">물리1 도르래</div>
-                <div class="category" OnClick="location.href ='./Bezier.html'" style="cursor:pointer;">베지어 곡선</div>
-                <div class="category" OnClick="location.href ='./EightPuzzle.html'" style="cursor:pointer; background-color: lightgreen;">8퍼즐(휴리스틱)</div>
-            </div>
-            <div class="contents">
-                <div class="contentsTitle">휴리스틱 탐색을 이용한 8퍼즐 문제 해결 프로그램</div>
-                <p>
-                    <b>
-                        사용한 엔진: Unity<br>
-                        <!-- 코드: <a href="https://gist.github.com/glacks06/2e460797f2b7efbf54927cdcbf3783d4" target="_blank" style="color: rgb(49, 198, 49);" >(Code Link)</a> -->
-                    </b><br><br>
-                    <iframe src="https://i.simmer.io/@chan515/8puzzle" style="width:960px;height:600px"></iframe>
-                    <br><br>
-                    학교 인공지능 기초시간에 제출한 프로젝트이다.<br><br>
-                    <!-- <img src="kinetic_wall_clock_img1.PNG"><br> -->
 
-                </p>
-            </div>
-        </div>
+        <!-- 사이드바 -->
+        <ul class="sideBar">
+            <li OnClick="location.href ='./projects.html'">Projects</li>
+            <li OnClick="location.href ='./kinetic_Wall_Clock.html'">Kinetic Wall Clock</li>
+            <li OnClick="location.href ='./earthS_track.html'">이심률 변화 프로그램</li>
+            <li OnClick="location.href ='./physics_pulley.html'">물리1 도르래</li>
+            <li OnClick="location.href ='./Bezier.html'">베지어 곡선</li>
+            <li OnClick="location.href ='./EightPuzzle.html'">8퍼즐 휴리스틱</li>
+            
+        </ul>
+        <section>
+            <h1>Kinetic Wall Clock</h1><br><br>
+            
+            <p>
+                <b>
+                    사용한 엔진: Unity<br>
+                    <!-- 코드: <a href="https://gist.github.com/glacks06/2e460797f2b7efbf54927cdcbf3783d4" target="_blank" style="color: rgb(49, 198, 49);" >(Code Link)</a> -->
+                </b><br><br>
+                <iframe src="https://i.simmer.io/@chan515/8puzzle" style="width:960px;height:600px"></iframe>
+                <br><br>
+                학교 인공지능 기초시간에 제출한 프로젝트이다.<br><br>
+                <!-- <img src="kinetic_wall_clock_img1.PNG"><br> -->
+        
+            </p>
+        </section>
     </body>
 </html>

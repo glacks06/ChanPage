@@ -2,73 +2,66 @@
 <html>
     <head>
         <title>Chan's Trace/SCHOOL_PROJECT</title>
-        <link rel="stylesheet" type="text/css" href="school.css">
+        <link rel="stylesheet" type="text/css" href="projects.css">
     </head>
     <body>
         <div id="headBox">
-            <div class="logo">
-                <div class="logoText"><a href="../index.html">Chan</a></div>
-            </div>
-            <div class="nav">
-                <div OnClick="location.href ='../algorithm/algorithmPage.html'" style="cursor:pointer;">
-                    ALGORITHM
-                </div>
-                <div OnClick="location.href ='../web/webPage.html'" style="cursor:pointer;">
-                    WEB
-                </div>
-                <div OnClick="location.href ='../school/schoolPage.html'" style="cursor:pointer;" style="padding-top: 0px;">
-                    PROJECT
-                </div>
-                <div>???</div>
-                <div>???</div>
-            </div>
+            <ul class="nav">
+                <li><a href="../index.html">Chan's Page</a></li>
+                <li><a href="../algorithm/algorithmPage.html">Algorithm</a></li>
+                <li><a href="../projects/projects.html">Projects</a></li>
+                <li><a href="../web/webPage.html">Web</a></li>
+                <li><a href="../about/aboutPage.html">About</a></li>
+            </ul>
         </div>
-        <div id="base">
-            <div class="sideBar" style="height: 2900px;">
-                <div class="category" OnClick="location.href ='./schoolPage.html'" style="cursor:pointer;">> School Project <</div>
-                <div class="category" OnClick="location.href ='./kinetic_Wall_Clock.html'" style="cursor:pointer;">Kinetic Wall Clock</div>
-                <div class="category" OnClick="location.href ='./earthS_track.html'" style="cursor:pointer;">이심률 변화 프로그램</div>
-                <div class="category" OnClick="location.href ='./physics_pulley.html'" style="cursor:pointer;">물리1 도르래</div>
-                <div class="category" OnClick="location.href ='./Bezier.html'" style="cursor:pointer; background-color: lightgreen;">베지어 곡선</div>
-                <div class="category" OnClick="location.href ='./EightPuzzle.html'" style="cursor:pointer;">8퍼즐(휴리스틱)</div>
-            </div>
-            <div class="contents">
-                <div class="contentsTitle">베지어 곡선</div>
-                <p>
-                    <b>
-                        사용한 엔진: Unity<br>
-                        <!-- 코드: <a href="https://gist.github.com/glacks06/2e460797f2b7efbf54927cdcbf3783d4" target="_blank" style="color: rgb(49, 198, 49);" >(Code Link)</a> -->
-                    </b><br><br>
-                    <iframe src="https://i.simmer.io/@chan515/bezierproject" style="width:960px;height:600px"></iframe>
-                    <br><br>
-                    학교 진로시간에 제출한 프로젝트이다.<br><br>
-                    <!-- <img src="kinetic_wall_clock_img1.PNG"><br> -->
 
-                </p>
-                <p>
-                    <br><img src="img/BezierImg0.png"><br>
-                    베지어 곡선은 컴퓨터 그래픽스에서 사용되는 곡선으로 CSS 애니메이션 등에서 도형을 그릴 때 사용한다. 
-                    베지어 곡선은 조절점을 사용해서 곡선을 그리게 되는데 여기서 조절점이란 베지어 곡선을 정의하기 위해 필요한 점이다. 
-                    베지어 곡선이 그려지는 과정을 보면 매개변수 t(진행도와 비슷한 개념이다)가 0에서 1까지 증가하면서 첫 번째 조절점에서 
-                    마지막 조절점까지 그림을 그리는 점이 이동한다. 베지어 곡선의 자세한 원리는 다음과 같다.<br><br>
-
-                    1. 조절점이 2개일때<br>
-                    <img src="img/BezierImg1.png"><br>
-                    이때는 조절점 1에서 조절점 2까지 직선을 그린다. 
-                    t가 증가하면서 조절점1과 조절점2를 t:(1-t)로 내분하는 점이 곧 그림을 그리는 점의 위치가 된다.<br><br>
-
-                    2. 조절점이 3개일때<br>
-                    <img src="img/BezierImg2.png"><br>
-                    t가 증가하면서 조절점1과 조절점 2사이를 t:(1-t)를 내분하는 점(a), 조절점2와 조절점3 사이를 t:(1-t)로 내분하는 점(b)을 찍고 
-                    이 두 a와 b를 다시 t:(1-t)로 내분하는 점이 곧 그림을 그리는 점의 위치가 된다.<br><br>
-
-                    3. 조절점이 4개 이상일 때<br>
-                    <img src="img/BezierImg3.png"><br>
-                    조절점이 4개일때, 5개일때 혹은 더 많더라도 위의 메커니즘이 반복 적용된다. 
-                    즉 각자 숫자의 차가 1인 조절점들 사이의 t:(1-t)를 내분하는 점을 찍고 다시 그 조절점끼리 내분하는 점을 찍는 것을 반복하여 
-                    최종적으로 하나의 점의 좌표가 나올 때까지 반복한다.<br>
-                </p>
-            </div>
-        </div>
+        <!-- 사이드바 -->
+        <ul class="sideBar">
+            <li OnClick="location.href ='./projects.html'">Projects</li>
+            <li OnClick="location.href ='./kinetic_Wall_Clock.html'">Kinetic Wall Clock</li>
+            <li OnClick="location.href ='./earthS_track.html'">이심률 변화 프로그램</li>
+            <li OnClick="location.href ='./physics_pulley.html'">물리1 도르래</li>
+            <li OnClick="location.href ='./Bezier.html'">베지어 곡선</li>
+            <li OnClick="location.href ='./EightPuzzle.html'">8퍼즐 휴리스틱</li>
+            
+        </ul>
+        <section>
+            <h1>베지어 곡선</h1><br><br>
+            <p>
+                <b>
+                    사용한 엔진: Unity<br>
+                    <!-- 코드: <a href="https://gist.github.com/glacks06/2e460797f2b7efbf54927cdcbf3783d4" target="_blank" style="color: rgb(49, 198, 49);" >(Code Link)</a> -->
+                </b><br><br>
+                <iframe src="https://i.simmer.io/@chan515/bezierproject" style="width:960px;height:600px"></iframe>
+                <br><br>
+                학교 진로시간에 제출한 프로젝트이다.<br><br>
+                <!-- <img src="kinetic_wall_clock_img1.PNG"><br> -->
+        
+            </p>
+            <p>
+                <br><img src="img/BezierImg0.png"><br>
+                베지어 곡선은 컴퓨터 그래픽스에서 사용되는 곡선으로 CSS 애니메이션 등에서 도형을 그릴 때 사용한다. 
+                베지어 곡선은 조절점을 사용해서 곡선을 그리게 되는데 여기서 조절점이란 베지어 곡선을 정의하기 위해 필요한 점이다. 
+                베지어 곡선이 그려지는 과정을 보면 매개변수 t(진행도와 비슷한 개념이다)가 0에서 1까지 증가하면서 첫 번째 조절점에서 
+                마지막 조절점까지 그림을 그리는 점이 이동한다. 베지어 곡선의 자세한 원리는 다음과 같다.<br><br>
+        
+                1. 조절점이 2개일때<br>
+                <img src="img/BezierImg1.png"><br>
+                이때는 조절점 1에서 조절점 2까지 직선을 그린다. 
+                t가 증가하면서 조절점1과 조절점2를 t:(1-t)로 내분하는 점이 곧 그림을 그리는 점의 위치가 된다.<br><br>
+        
+                2. 조절점이 3개일때<br>
+                <img src="img/BezierImg2.png"><br>
+                t가 증가하면서 조절점1과 조절점 2사이를 t:(1-t)를 내분하는 점(a), 조절점2와 조절점3 사이를 t:(1-t)로 내분하는 점(b)을 찍고 
+                이 두 a와 b를 다시 t:(1-t)로 내분하는 점이 곧 그림을 그리는 점의 위치가 된다.<br><br>
+        
+                3. 조절점이 4개 이상일 때<br>
+                <img src="img/BezierImg3.png"><br>
+                조절점이 4개일때, 5개일때 혹은 더 많더라도 위의 메커니즘이 반복 적용된다. 
+                즉 각자 숫자의 차가 1인 조절점들 사이의 t:(1-t)를 내분하는 점을 찍고 다시 그 조절점끼리 내분하는 점을 찍는 것을 반복하여 
+                최종적으로 하나의 점의 좌표가 나올 때까지 반복한다.<br>
+            </p>
+            
+        </section>
     </body>
 </html>

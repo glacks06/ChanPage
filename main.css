@@ -19,6 +19,7 @@ body{
 #headBox{
     width: 100%; height: 70px;
     position: fixed;
+    z-index: 1;
     top: 0px;
     background-image: linear-gradient(to bottom, lightblue, black, black);
     border-bottom: 2px solid gray;
