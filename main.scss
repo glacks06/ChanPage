@@ -1,21 +1,7 @@
 @use './modules/mixins' as mixin;
 
 * {
-    margin: 0px; 
-    padding: 0px;
-    box-sizing: border-box;
-    a{
-        text-decoration-line: none;
-        color: white;
-    }
-    ul{
-        list-style-type: none;
-    }
-    body{
-        background-color: black;
-        padding-top: 70px;
-        color: white;
-    }
+    @include mixin.default-setting;
 }
 
 /*head Box*/
