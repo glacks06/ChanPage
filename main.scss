@@ -16,44 +16,36 @@ body{
 }
 
 /*head Box*/
-#headBox{
+header{
     width: 100%; height: 70px;
     position: fixed;
-    z-index: 1;
     top: 0px;
     background-image: linear-gradient(to bottom, lightblue, black, black);
     border-bottom: 2px solid gray;
-}
-
-#headBox .nav{
-    width: 1000px; height: 70px;
-    margin-left: 100px;
-    display: flex;
-}
-#headBox .nav li{
-    margin: auto 40px;
-    font-size: 20px;
-}
-.nav div:hover{
-    background-color: lightgray;
+    ul{
+        width: 1000px; height: 70px;
+        margin-left: 100px;
+        display: flex;
+        li{
+            margin: auto 40px;
+            font-size: 20px;
+        }
+    }
 }
 
 /*본문*/
-.section{
+section{
     width: 1500px; height: 500px;
     margin: 200px auto;
     display: flex;
     
-    /* border: 3px solid gray; */
-}
-.section > div{
-    width: 750px; height: 500px;
-    
-}
-.section_Img{
-    display: block;
-    margin: 20px;
-    width: 710px; height: 460px;
+    > div{width: 750px; height: 500px;}
+    img{
+        display: block;
+        margin: 20px;
+        width: 710px; height: 460px;
+    }
+
 }
 
 .section_TextBox{
@@ -72,7 +64,6 @@ body{
     font-size: 20px;
     line-height: 50px;
     background-color: blue;
-    
 }
 .section_TextBox div:hover{
     background-color: rgb(46, 118, 252);
