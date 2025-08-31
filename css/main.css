@@ -4,17 +4,14 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
-a {
+* a {
   text-decoration-line: none;
   color: white;
 }
-
-ul {
+* ul {
   list-style-type: none;
 }
-
-body {
+* body {
   background-color: black;
   padding-top: 70px;
   color: white;
@@ -47,53 +44,33 @@ section {
   margin: 200px auto;
   display: flex;
 }
-section > div {
+section img {
+  display: block;
   width: 750px;
   height: 500px;
 }
-section img {
-  display: block;
-  margin: 20px;
-  width: 710px;
-  height: 460px;
-}
-
-.section_TextBox {
+section .section_TextBox {
+  width: 750px;
+  height: 500px;
   font-size: 60px;
   text-align: center;
 }
-
-.section_TextBox p {
+section .section_TextBox p {
   margin-top: 90px;
 }
-
-.section_TextBox small {
+section .section_TextBox small {
   font-size: 20px;
   color: rgb(213, 213, 213);
 }
-
-.section_TextBox div {
+section .section_TextBox div {
   width: 100px;
   height: 50px;
   margin: 40px auto;
   font-size: 20px;
   line-height: 50px;
   background-color: blue;
+  cursor: pointer;
 }
-
-.section_TextBox div:hover {
+section .section_TextBox div:hover {
   background-color: rgb(46, 118, 252);
-}
-
-/*각 파트별 제목+설명*/
-/* .section .introduce{width: 640px; height: 210px; margin: 20px;}
-.section .introduce .introduce_title{
-    width: 300px; margin: 20px auto;
-    font-size: 40px;
-    text-align: center;
-}
-.section .introduce .introduce_article{
-    width: 500px; margin: 20px auto;
-    font-size: 20px;
-    text-align: center;
-} *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
