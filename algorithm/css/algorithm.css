@@ -1,0 +1,94 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
+}
+* a {
+  text-decoration-line: none;
+  color: white;
+}
+* ul {
+  list-style-type: none;
+}
+* body {
+  background-color: #121212;
+  padding-top: 70px;
+  color: white;
+}
+
+/*head Box*/
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid gray;
+}
+header ul {
+  width: 1000px;
+  height: 70px;
+  margin-left: 100px;
+  display: flex;
+}
+header ul li {
+  margin: auto 40px;
+  font-size: 20px;
+}
+
+main {
+  display: flex;
+}
+main .sideBar {
+  width: 300px;
+  height: 100vh;
+  left: 0px;
+  background-color: black;
+  border-right: 2px solid gray;
+}
+main .sideBar li {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  background-color: black;
+  transition-duration: 0.2s;
+}
+main .sideBar li:hover {
+  background-color: rgb(41, 41, 41);
+}
+main {
+  /* 본문 */
+}
+main section {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+main section div {
+  width: 200px;
+  height: 250px;
+  margin: 20px;
+  text-align: center;
+  background-image: linear-gradient(to bottom, lightblue, black);
+  border: 2px solid rgba(255, 255, 255, 0.227);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+main section div:hover {
+  opacity: 0.5;
+}
+main section div img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+}/*# sourceMappingURL=algorithm.css.map */

@@ -3,6 +3,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
 }
 * a {
   text-decoration-line: none;
@@ -12,7 +13,7 @@
   list-style-type: none;
 }
 * body {
-  background-color: black;
+  background-color: #121212;
   padding-top: 70px;
   color: white;
 }
@@ -23,7 +24,8 @@ header {
   height: 70px;
   position: fixed;
   top: 0px;
-  background-image: linear-gradient(to bottom, lightblue, black, black);
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
   border-bottom: 2px solid gray;
 }
 header ul {
@@ -63,12 +65,13 @@ section .section_TextBox small {
   color: rgb(213, 213, 213);
 }
 section .section_TextBox div {
-  width: 100px;
-  height: 50px;
-  margin: 40px auto;
+  width: 120px;
+  height: 70px;
+  margin: 60px auto;
   font-size: 20px;
-  line-height: 50px;
-  background-color: blue;
+  line-height: 70px;
+  background-color: #2563EB;
+  border-radius: 8px;
   cursor: pointer;
 }
 section .section_TextBox div:hover {
