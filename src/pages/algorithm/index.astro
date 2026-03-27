@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+// 1. CollectionEntry 타입을 불러옵니다.
+import type { CollectionEntry } from 'astro:content'; 
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/sidebars/algorithm_sidebar.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const allPosts = await getCollection('algorithm');
+---
+
+<Layout hasSidebar={true}>
+    <Sidebar slot="sidebar" />
+
+    <section class="algorithm-list-container">
+        
+        <div class="article-grid">
+            {/* 2. post 뒤에 : CollectionEntry<'algorithm'>를 붙여 타입을 명시합니다. */}
+            {allPosts.map((post: CollectionEntry<'algorithm'>) => (
+                <ArticleCard
+                    title={post.data.title}
+                    description={post.data.description}
+                    href={`/algorithm/${post.id}`}
+                />
+            ))}
+        </div>
+    </section>
+</Layout>
+
+<style lang="scss">
+    @use '../../styles/tokens' as t;
+
+    .algorithm-list-container {
+        padding: 2rem;
+
+        h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+        p { color: t.$color-text-dim; margin-bottom: 2rem; }
+    }
+
+    .article-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+</style>

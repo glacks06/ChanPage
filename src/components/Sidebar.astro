@@ -1,0 +1,96 @@
+---
+interface SidebarItem {
+  label: string;
+  href?: string;
+  disabled?: boolean;
+  match?: 'exact' | 'startsWith';
+}
+
+interface Props {
+  title?: string;
+  items: SidebarItem[];
+  currentPath?: string;
+  currentUrl?: string;
+}
+
+const { title, items, currentPath = Astro.url.pathname, currentUrl = `${Astro.url.pathname}${Astro.url.search}` } = Astro.props;
+
+const isActive = (item: SidebarItem) => {
+  if (!item.href) return false;
+  const mode = item.match ?? 'startsWith';
+  const comparisonTarget = item.href.includes('?') ? currentUrl : currentPath;
+  if (mode === 'exact') return comparisonTarget === item.href;
+  return comparisonTarget.startsWith(item.href);
+};
+---
+
+<aside class="sidebar">
+  {title && <h2 class="sidebar-title">{title}</h2>}
+
+  <ul class="sidebar-list">
+    {items.map((item) => (
+      <li class:list={['sidebar-item', { 'is-active': isActive(item), 'is-disabled': item.disabled }]}>
+        {item.href && !item.disabled ? (
+          <a href={item.href}>{item.label}</a>
+        ) : (
+          <span>{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ul>
+</aside>
+
+<style lang="scss">
+  @use '../styles/tokens' as t;
+
+  .sidebar {
+    width: t.$sidebar-width;
+    min-height: 100vh;
+    background-color: t.$color-bg-sidebar;
+    border-right: t.$border-thin solid t.$color-border-default;
+    border-bottom: t.$border-thin solid t.$color-border-default;
+    padding: t.$space-2;
+  }
+
+  .sidebar-title {
+    font-size: t.$font-size-md;
+    margin-bottom: t.$space-3;
+    padding: 0 t.$space-1;
+  }
+
+  .sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: t.$space-1;
+  }
+
+  .sidebar-item {
+    height: t.$sidebar-item-height;
+    border-radius: t.$radius-md;
+    line-height: t.$line-height-sidebar-item;
+    text-align: center;
+    transition: background-color t.$transition-fast;
+
+    a,
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: t.$color-text-primary;
+    }
+
+    &:hover {
+      background-color: t.$color-bg-hover;
+    }
+
+    &.is-active {
+      background-color: t.$color-bg-hover;
+      border: t.$border-default solid t.$color-border-accent;
+    }
+
+    &.is-disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+  }
+</style>

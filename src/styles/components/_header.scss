@@ -1,0 +1,23 @@
+@use '../tokens' as t;
+
+header {
+  width: 100%;
+  height: t.$header-height;
+  position: fixed;
+  top: t.$space-0;
+  background-color: t.$color-bg-surface;
+  backdrop-filter: blur(t.$blur-header);
+  border-bottom: t.$border-thin solid t.$color-border-default;
+
+  ul {
+    width: t.$content-max-width;
+    height: t.$header-height;
+    margin-left: t.$space-6;
+    display: flex;
+
+    li {
+      margin: auto t.$space-4;
+      font-size: t.$font-size-md;
+    }
+  }
+}

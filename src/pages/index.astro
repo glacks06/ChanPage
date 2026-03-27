@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout hasSidebar={false}>
+	<section>
+		<img src="/images/home/TechLog.png" alt="Laptop Tech Log 섹션 이미지" />
+		<div class="section_TextBox">
+			<p>Tech Log<br>
+				<small>Git, Docker, Frontend, Node.js 등 실전 기술 기록</small>
+			</p>
+			
+			<a href="/tech-log" class="see-all-btn">
+    			See All
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="section_TextBox">
+			<p>Algorithm<br>
+				<small>백준 풀이, CS 개념, 기초 역량 학습 아카이브</small>
+			</p>
+			<a href="/algorithm" class="see-all-btn">
+    			See All
+			</a>
+		</div>
+		<img src="/images/home/algorithm.jpg" alt="Brain CS & Algorithm 섹션 이미지" />
+	</section>
+	<section>
+		<img src="/images/home/InsightsAndNotes.png" alt="Insights & Notes 섹션 이미지" />
+		<div class="section_TextBox">
+			<p>Insights & Notes<br>
+				<small>궁금증 탐구, 딥다이브, 용어/개념 정리 노트</small>
+			</p>
+			<a href="/insights" class="see-all-btn">
+    			See All
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="section_TextBox">
+			<p>Projects<br>
+				<small>포트폴리오와 결과물 중심의 프로젝트 아카이브</small>
+			</p>
+			<a href="/projects" class="see-all-btn">
+    			See All
+			</a>
+		</div>
+		<img src="/images/home/projects.jpg" alt="Projects 섹션 이미지" />
+	</section>
+</Layout>
+
+<style lang="scss">
+	@use '../styles/tokens' as t;
+
+	section{
+		width: t.$section-width;
+		height: t.$section-height;
+		margin: t.$space-9 auto;
+		display: flex;
+		
+		img{
+			display: block;
+			width: t.$section-half-width;
+			height: t.$section-height;
+		}
+		.section_TextBox{
+			width: t.$section-half-width;
+			height: t.$section-height;
+			font-size: t.$font-size-lg;
+			text-align: center;
+			p{margin-top: t.$space-8;}
+			small{font-size: t.$font-size-md; color: t.$color-text-muted;}
+			a{
+				display: block;
+				width: 120px;
+				height: t.$header-height;
+				margin: t.$space-7 auto;
+				font-size: t.$font-size-md;
+				line-height: t.$line-height-header-button;
+				background-color: t.$color-bg-button-primary;
+				border-radius: t.$radius-sm;
+				cursor: pointer;
+				&:hover{background-color: t.$color-bg-button-primary-hover;}
+			}
+
+		}
+	}
+</style>

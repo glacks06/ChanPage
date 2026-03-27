@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Sidebar from '../../../components/sidebars/algorithm_sidebar.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+
+const categoryMap = {
+  implementation: '구현',
+  bruteforce: '브루트포스',
+  'binary-search': '이분탐색',
+  recursion: '재귀',
+  greedy: '그리디',
+} as const;
+
+type CategoryKey = keyof typeof categoryMap;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('algorithm');
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props as { category: CategoryKey };
+const allPosts = await getCollection('algorithm');
+const filteredPosts = allPosts.filter((post) => post.data.category === category);
+const categoryLabel = categoryMap[category] ?? category;
+---
+
+<Layout hasSidebar={true}>
+  <Sidebar slot="sidebar" />
+
+  <section class="algorithm-list-container">
+    <h1>{categoryLabel}</h1>
+    <p>{categoryLabel} 카테고리의 아티클 목록입니다.</p>
+
+    <div class="article-grid">
+      {filteredPosts.map((post: CollectionEntry<'algorithm'>) => (
+        <ArticleCard
+          title={post.data.title}
+          description={post.data.description}
+          href={`/algorithm/${post.id}`}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  @use '../../../styles/tokens' as t;
+
+  .algorithm-list-container {
+    padding: 2rem;
+
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    p {
+      color: t.$color-text-dim;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+</style>

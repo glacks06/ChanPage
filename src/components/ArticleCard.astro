@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href } = Astro.props;
+---
+
+<article class="article-card">
+  <div class="card-content">
+    <h2>{title}</h2>
+    <p class="description">{description}</p>
+  </div>
+  <a href={href} class="read-more-btn">
+    자세히 보기
+  </a>
+</article>
+
+<style lang="scss">
+  @use '../styles/tokens' as t;
+
+  .article-card {
+    box-sizing: border-box;
+    flex: 0 0 t.$article-card-width;
+    max-width: 100%;
+    min-height: t.$article-card-min-height;
+    background: t.$color-bg-card;
+    border: t.$border-default solid t.$color-border-card;
+    border-radius: t.$radius-card;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform t.$transition-fast ease, box-shadow t.$transition-fast ease, border-color t.$transition-fast ease;
+
+    &:hover {
+      transform: translateY(t.$card-hover-offset);
+      border-color: t.$color-border-accent;
+      box-shadow: t.$shadow-card-hover;
+    }
+
+    .card-content {
+      flex: 1 1 auto;
+      min-height: 0;
+
+      h2 {
+        font-size: t.$font-size-card-title;
+        margin-bottom: 0.75rem;
+        color: t.$color-text-heading;
+      }
+
+      .description {
+        font-size: t.$font-size-card-desc;
+        color: t.$color-text-soft;
+        line-height: t.$line-height-card-desc;
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+    }
+
+    .read-more-btn {
+      margin-top: 1.25rem;
+      display: block;
+      text-align: center;
+      padding: 0.6rem;
+      background: t.$gradient-button-accent;
+      color: t.$color-text-button;
+      text-decoration: none;
+      border-radius: t.$radius-xs;
+      font-weight: 600;
+      transition: filter t.$transition-fast ease;
+
+      &:hover {
+        filter: brightness(t.$button-hover-brightness);
+      }
+    }
+  }
+
+  @media (max-width: t.$breakpoint-md) {
+    .article-card {
+      flex: 1 1 100%;
+    }
+  }
+</style>

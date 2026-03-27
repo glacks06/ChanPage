@@ -1,0 +1,60 @@
+@use '../tokens' as t;
+
+@mixin article-detail {
+  padding: t.$space-4;
+  
+
+  .content {
+    line-height: t.$article-detail-content-line-height;
+
+    img {
+      max-width: 100%; /* 부모 요소의 너비를 절대 넘지 않도록 제한 */
+      height: auto;    /* 가로가 줄어든 비율에 맞춰 세로 높이도 자동으로 조절 (비율 유지) */
+      display: block;  /* 이미지를 블록 요소로 만들어 하단 여백 버그 방지 */
+      margin: 1.5rem auto; /* 이미지를 가운데 정렬하고 위아래 여백 주기 */
+      border-radius: 8px; /* (선택) 다크모드에서 이미지가 부드러워 보이도록 모서리 둥글게 */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      color: #e2e8f0; /* 전체 글자색을 밝은 회색으로 */
+    }
+  
+    th, td {
+      border: 1px solid #334155; /* 테두리는 어두운 회색(또는 남색 계열)으로 */
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #1e293b; /* 제목 칸은 배경보다 살짝 밝은 어두운 색 */
+      font-weight: 600;
+      color: #ffffff; /* 제목 칸 글자는 완전한 흰색으로 강조 */
+    }
+  
+    /* 짝수 줄에만 미세한 배경색 차이를 주어 읽기 편하게 만듦 */
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.03); /* 투명도를 이용해 자연스럽게 색상 분리 */
+    }
+
+    ul {
+      list-style-type: disc; /* 점(•) 모양 불릿 살리기 */
+      padding-left: 1.5rem; /* 불릿이 밖으로 삐져나가지 않게 왼쪽 여백 주기 */
+      margin: 1rem 0; /* 위아래 여백 */
+    }
+
+    ol {
+      list-style-type: decimal; /* 숫자(1. 2. 3.) 목록도 같이 살려주기 */
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      line-height: 1.6;
+      margin-bottom: 0.4rem; /* 항목들 사이의 간격 살짝 띄우기 */
+    }
+  }
+}

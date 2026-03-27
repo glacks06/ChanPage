@@ -1,0 +1,7 @@
+@use '../tokens' as t;
+
+body {
+  background-color: t.$color-bg-app;
+  padding-top: t.$header-height;
+  color: t.$color-text-primary;
+}

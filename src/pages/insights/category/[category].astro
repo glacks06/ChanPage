@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Sidebar from '../../../components/sidebars/insights_sidebar.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+
+const categoryLabels: Record<string, string> = {
+  'deep-dive': 'Deep Dive',
+  terms: 'Terms & Concepts',
+  misc: '기타',
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection('insights');
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props as { category: string };
+const allPosts = await getCollection('insights');
+const filteredPosts = allPosts.filter((post) => post.data.category === category);
+const categoryLabel = categoryLabels[category] ?? category;
+---
+
+<Layout hasSidebar={true}>
+  <Sidebar slot="sidebar" />
+
+  <section class="list-container">
+    <h1>{categoryLabel}</h1>
+    <p>{categoryLabel} 카테고리의 아티클 목록입니다.</p>
+
+    <div class="article-grid">
+      {filteredPosts.map((post: CollectionEntry<'insights'>) => (
+        <ArticleCard
+          title={post.data.title}
+          description={post.data.description}
+          href={`/insights/${post.id}`}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  @use '../../../styles/tokens' as t;
+
+  .list-container {
+    padding: 2rem;
+
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    p {
+      color: t.$color-text-dim;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .article-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+</style>

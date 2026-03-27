@@ -1,0 +1,14 @@
+---
+import Sidebar from '../Sidebar.astro';
+
+const items = [
+  { label: '알고리즘', href: '/algorithm', match: 'exact' as const },
+  { label: '구현', href: '/algorithm/category/implementation' },
+  { label: '브루트포스', href: '/algorithm/category/bruteforce' },
+  { label: '이분탐색', href: '/algorithm/category/binary-search' },
+  { label: '재귀', href: '/algorithm/category/recursion' },
+  { label: '그리디', href: '/algorithm/category/greedy' },
+];
+---
+
+<Sidebar title="Algorithm" items={items} />

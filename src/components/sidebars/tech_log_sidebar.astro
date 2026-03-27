@@ -1,0 +1,16 @@
+---
+import Sidebar from '../Sidebar.astro';
+
+const items = [
+  { label: 'Tech Log', href: '/tech-log', match: 'exact' as const },
+  { label: 'Git', href: '/tech-log/category/git' },
+  { label: 'Web', href: '/tech-log/category/web' },
+  { label: 'React', href: '/tech-log/category/react' },
+  // { label: 'Docker', href: '/tech-log/category/docker' },
+  // { label: 'Frontend', href: '/tech-log/category/frontend' },
+  // { label: 'Node.js', href: '/tech-log/category/nodejs' },
+  // { label: '기타', href: '/tech-log/category/misc' },
+];
+---
+
+<Sidebar title="Tech Log" items={items} />

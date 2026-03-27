@@ -1,0 +1,12 @@
+---
+import Sidebar from '../Sidebar.astro';
+
+const items = [
+  { label: 'Projects', href: '/projects', match: 'exact' as const },
+  { label: 'Unity', href: '/projects/category/unity' },
+  { label: 'Web', href: '/projects/category/web-project' },
+  { label: '기타', href: '/projects/category/misc' },
+];
+---
+
+<Sidebar title="Projects" items={items} />

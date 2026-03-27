@@ -1,0 +1,5 @@
+@use '../mixins/article-detail' as *;
+
+.article-detail {
+  @include article-detail;
+}

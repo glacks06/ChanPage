@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/sidebars/insights_sidebar.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('insights');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout hasSidebar={true}>
+  <Sidebar slot="sidebar" />
+
+  <article class="article-detail">
+    <h1>{entry.data.title}</h1>
+    <hr />
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+</Layout>
