@@ -9,15 +9,20 @@ const postSchema = z.object({
   date: z.date().optional(),
 });
 
+// const algorithm = defineCollection({
+//   // 중요: loader의 base 경로가 실제 파일 위치와 일치해야 합니다.
+//   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/algorithm" }),
+//   schema: z.object({
+//     title: z.string(),
+//     description: z.string(),
+//     category: z.enum(['implementation', 'bruteforce', 'binary-search', 'recursion', 'greedy']),
+//     date: z.date().optional(),
+//   }),
+// });
+
 const algorithm = defineCollection({
-  // 중요: loader의 base 경로가 실제 파일 위치와 일치해야 합니다.
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/algorithm" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    category: z.enum(['implementation', 'bruteforce', 'binary-search', 'recursion', 'greedy']),
-    date: z.date().optional(),
-  }),
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/algorithm' }),
+  schema: postSchema,
 });
 
 const techLog = defineCollection({

@@ -1,6 +1,6 @@
 ---
-title: "[파이썬] venv"
-description: ""
+title: "venv"
+description: "Python"
 category: "language"
 date: 2025-11-10
 ---
