@@ -5,7 +5,11 @@ interface Props {
   href: string;
 }
 
+import { getRelativePath } from "../utils/path-utils";
+
 const { title, description, href } = Astro.props;
+
+const fullHref = getRelativePath(href);
 ---
 
 <article class="article-card">
@@ -13,7 +17,7 @@ const { title, description, href } = Astro.props;
     <h2>{title}</h2>
     <p class="description">{description}</p>
   </div>
-  <a href={href} class="read-more-btn">
+  <a href={fullHref} class="read-more-btn">
     자세히 보기
   </a>
 </article>
