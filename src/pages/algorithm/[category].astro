@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
-import Sidebar from '../../../components/sidebars/algorithm_sidebar.astro';
-import ArticleCard from '../../../components/ArticleCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/sidebars/algorithm_sidebar.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 
 const categoryMap = {
   implementation: '구현',
@@ -55,7 +55,7 @@ const categoryLabel = categoryMap[category] ?? category;
 </Layout>
 
 <style lang="scss">
-  @use '../../../styles/tokens' as t;
+  @use '../../styles/tokens' as t;
 
   .algorithm-list-container {
     padding: 2rem;

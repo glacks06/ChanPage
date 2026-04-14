@@ -17,7 +17,7 @@ const allPosts = await getCollection('insights');
         <ArticleCard
           title={post.data.title}
           description={post.data.description}
-          href={`/insights/${post.id}`}
+          href={`insights/${post.id}`}
         />
       ))}
     </div>

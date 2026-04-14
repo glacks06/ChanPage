@@ -1,18 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
-import Sidebar from '../../../components/sidebars/insights_sidebar.astro';
-import ArticleCard from '../../../components/ArticleCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/sidebars/tech_log_sidebar.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 
 const categoryLabels: Record<string, string> = {
-  'deep-dive': 'Deep Dive',
-  terms: 'Terms & Concepts',
-  training: 'Questioning Training',
+  git: 'Git',
+  web: 'Web',
+  react: 'React',
+  docker: 'Docker',
+  os: 'OS',
+  language: 'Language',
+  unitytech: 'Unity',
+  // nodejs: 'Node.js',
+  // misc: '기타',
 };
 
 export async function getStaticPaths() {
-  const posts = await getCollection('insights');
+  const posts = await getCollection('techLog');
   const categories = [...new Set(posts.map((post) => post.data.category))];
 
   return categories.map((category) => ({
@@ -22,9 +28,11 @@ export async function getStaticPaths() {
 }
 
 const { category } = Astro.props as { category: string };
-const allPosts = await getCollection('insights');
+const allPosts = await getCollection('techLog');
 const filteredPosts = allPosts.filter((post) => post.data.category === category);
 const categoryLabel = categoryLabels[category] ?? category;
+
+
 ---
 
 <Layout hasSidebar={true}>
@@ -35,11 +43,11 @@ const categoryLabel = categoryLabels[category] ?? category;
     <p>{categoryLabel} 카테고리의 아티클 목록입니다.</p>
 
     <div class="article-grid">
-      {filteredPosts.map((post: CollectionEntry<'insights'>) => (
+      {filteredPosts.map((post: CollectionEntry<'techLog'>) => (
         <ArticleCard
           title={post.data.title}
           description={post.data.description}
-          href={`/insights/${post.id}`}
+          href={`/tech-log/${post.id}`}
         />
       ))}
     </div>
@@ -47,7 +55,7 @@ const categoryLabel = categoryLabels[category] ?? category;
 </Layout>
 
 <style lang="scss">
-  @use '../../../styles/tokens' as t;
+  @use '../../styles/tokens' as t;
 
   .list-container {
     padding: 2rem;

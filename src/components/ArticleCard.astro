@@ -10,6 +10,8 @@ import { getRelativePath } from "../utils/path-utils";
 const { title, description, href } = Astro.props;
 
 const fullHref = getRelativePath(href);
+
+console.log(href);
 ---
 
 <article class="article-card">

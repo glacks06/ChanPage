@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
-import Sidebar from '../../../components/sidebars/projects_sidebar.astro';
-import ArticleCard from '../../../components/ArticleCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/sidebars/projects_sidebar.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 
 const categoryLabels: Record<string, string> = {
   web: 'Web',
@@ -47,7 +47,7 @@ const categoryLabel = categoryLabels[category] ?? category;
 </Layout>
 
 <style lang="scss">
-  @use '../../../styles/tokens' as t;
+  @use '../../styles/tokens' as t;
 
   .list-container {
     padding: 2rem;
