@@ -1,12 +1,7 @@
 // src/content.config.ts
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders'; // 최신 방식은 glob 로더를 사용합니다.
-import { defineConfig } from 'astro/config';
 
-export default defineConfig({
-  site: 'https://glacks06.github.io', // 본인의 깃허브 페이지 주소
-  base: '/ChanPage', // 저장소 이름 (예: 저장소 이름이 my-website라면 '/my-website')
-});
 
 const postSchema = z.object({
   title: z.string(),
